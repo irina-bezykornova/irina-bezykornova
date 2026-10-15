@@ -2124,3 +2124,34 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-08 .выбор-связи__вариант:hover, #экран-08 .выбор-связи__вариант:focus-visible { background: var(--цвет-акцент-тёмный); color: var(--цвет-на-акценте); }
   #экран-08 .выбор-связи__закрыть { position: absolute; top: .75rem; right: .75rem; width: 2.25rem; height: 2.25rem; border: 0; border-radius: 50%;
       background: transparent; color: var(--цвет-текст-мягкий); font-size: var(--кегль-h2); line-height: 1; cursor: pointer; }
+
+  @media (max-width: 899px) {
+    #экран-08 .конт__карточка { display: none; }
+  }
+
+/* экран 10 */
+#экран-10 .блок__внутри { padding-block: 3rem 2rem; }
+  #экран-10 .подвал__сетка { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  #экран-10 .подвал__лого { display: block; font-weight: 700; font-size: var(--кегль-текст); line-height: 1.25; }
+  #экран-10 .подвал__сетка p { margin: .5rem 0 0; font-size: var(--кегль-мелкий); line-height: 1.5; }
+  #экран-10 h4 { margin: 0 0 .75rem; font-size: var(--кегль-кикер); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  #экран-10 .подвал__ссылки { display: flex; flex-direction: column; gap: .5rem; }
+  #экран-10 .подвал__ссылки a { font-size: var(--кегль-мелкий); text-decoration: underline; text-underline-offset: .2em; }
+  #экран-10 .подвал__ссылки span { font-size: var(--кегль-мелкий); line-height: 1.5; }
+  #экран-10 .подвал__низ { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid; display: flex; flex-direction: column; gap: .35rem; font-size: var(--кегль-мелкий); line-height: 1.5; }
+  #экран-10.светлый, #экран-10.тёмный { background: var(--цвет-тёмный-фон-3); color: var(--цвет-фон); }
+  #экран-10.светлый .подвал__лого, #экран-10.тёмный .подвал__лого,
+  #экран-10.светлый h4, #экран-10.тёмный h4 { color: var(--цвет-фон); }
+  #экран-10.светлый .подвал__ссылки a, #экран-10.тёмный .подвал__ссылки a,
+  #экран-10.светлый .подвал__сетка p, #экран-10.тёмный .подвал__сетка p,
+  #экран-10.светлый .подвал__ссылки span, #экран-10.тёмный .подвал__ссылки span,
+  #экран-10.светлый .подвал__низ, #экран-10.тёмный .подвал__низ { color: var(--цвет-фон); }
+  #экран-10.светлый .подвал__низ, #экран-10.тёмный .подвал__низ { border-color: color-mix(in srgb, var(--цвет-фон) 30%, transparent); }
+  @media (min-width: 900px) {
+    #экран-10 .подвал__сетка { grid-template-columns: 1.3fr 1fr 1.3fr; gap: 3rem; }
+    #экран-10 .подвал__низ { flex-direction: row; justify-content: space-between; gap: 1.5rem; }
+  }
+
+  @media (max-width: 899px) {
+    #экран-10 a { display: inline-block; padding: .65rem 0; }
+  }
