@@ -1810,12 +1810,20 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       font-size: var(--кегль-текст); letter-spacing: var(--разрядка-кикера); }
 
   #экран-03 .опоры { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
-  #экран-03 .помощь-пункт { display: grid; grid-template-columns: auto 1fr; column-gap: .875rem;
-      padding: 1.1rem 0; border-top: 1px solid transparent; }
+  #экран-03 .помощь-пункт { padding: 0; border-top: 1px solid transparent; }
   #экран-03 .помощь-пункт:last-child { border-bottom: 1px solid transparent; }
   #экран-03 .помощь-пункт p { margin: 0; font-size: var(--кегль-текст); line-height: 1.6; }
   #экран-03 .помощь-пункт b { font-weight: 700; font-size: var(--кегль-лид); }
-  #экран-03 .помощь-пункт b::after { content: ""; display: block; height: .3rem; }
+
+  #экран-03 .помощь-пункт summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.1rem 0; cursor: pointer; list-style: none; }
+  #экран-03 .помощь-пункт summary::-webkit-details-marker { display: none; }
+  #экран-03 .помощь-пункт summary::after { content: "+"; flex: none; width: 1.75rem; height: 1.75rem; display: grid; place-items: center;
+      border-radius: 50%; font-size: var(--кегль-лид); line-height: 1; font-weight: 400;
+      border: 1px solid currentColor; transition: transform .2s ease; }
+  #экран-03 .помощь-пункт details[open] > summary::after { content: "−"; }
+  #экран-03 .помощь-пункт summary:focus-visible { outline: 2px solid var(--цвет-акцент-тёмный); outline-offset: 2px; border-radius: var(--радиус-малый); }
+  #экран-03 .помощь-пункт details > p { padding: 0 2.75rem 1.25rem 0; }
 
   #экран-03 .кадр { margin: 0; border-radius: var(--радиус); overflow: hidden; box-shadow: var(--тень-глубокая); }
   #экран-03 .кадр img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; }
@@ -1827,11 +1835,13 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03.светлый .помощь-пункт:last-child { border-bottom-color: var(--цвет-линия); }
   #экран-03.светлый .помощь-пункт p { color: var(--цвет-текст-мягкий); }
   #экран-03.светлый .помощь-пункт b { color: var(--цвет-текст); }
+  #экран-03.светлый .помощь-пункт summary { color: var(--цвет-акцент-тёмный); }
   #экран-03.тёмный .помощь__вводная { color: var(--тёплый-ключа, var(--цвет-акцент-тёмный)); }
   #экран-03.тёмный .помощь-пункт { border-top-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
   #экран-03.тёмный .помощь-пункт:last-child { border-bottom-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
   #экран-03.тёмный .помощь-пункт p { color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 86%, transparent); }
   #экран-03.тёмный .помощь-пункт b { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
+  #экран-03.тёмный .помощь-пункт summary { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
 
   @media (min-width: 900px) {
     #экран-03 .помощь { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 3.5rem; }
@@ -1883,8 +1893,17 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   #экран-04 .обучение h3 { margin: 0 0 .5rem; font-size: var(--кегль-лид); font-weight: 700; }
   #экран-04 .обучение__вводная { margin: 0 0 1.25rem; font-size: var(--кегль-текст); line-height: 1.6; max-width: 44rem; }
-  #экран-04 .оп-обучение { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 0 3rem; }
-  #экран-04 .оп-пункт { padding: 1.1rem 0; border-top: 1px solid transparent; }
+  #экран-04 .оп-обучение { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; max-width: 44rem; }
+  #экран-04 .оп-пункт { padding: 0; border-top: 1px solid transparent; }
+
+  #экран-04 .оп-пункт summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.1rem 0; cursor: pointer; list-style: none; }
+  #экран-04 .оп-пункт summary::-webkit-details-marker { display: none; }
+  #экран-04 .оп-пункт summary::after { content: "+"; flex: none; width: 1.75rem; height: 1.75rem; display: grid; place-items: center;
+      border-radius: 50%; font-size: var(--кегль-лид); line-height: 1; font-weight: 400; border: 1px solid currentColor; }
+  #экран-04 .оп-пункт details[open] > summary::after { content: "−"; }
+  #экран-04 .оп-пункт summary:focus-visible { outline: 2px solid var(--цвет-акцент-тёмный); outline-offset: 2px; border-radius: var(--радиус-малый); }
+  #экран-04 .оп-пункт details > p { padding: 0 2.75rem 1.25rem 0; }
   #экран-04 .оп-пункт p { margin: 0; font-size: var(--кегль-текст); line-height: 1.6; }
   #экран-04 .оп-пункт b { font-weight: 700; }
   #экран-04 .оп-обучение .оп-пункт:last-child { border-bottom: 1px solid transparent; }
@@ -1894,22 +1913,20 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04.светлый .оп-пункт { border-top-color: var(--цвет-линия); }
   #экран-04.светлый .оп-обучение .оп-пункт:last-child { border-bottom-color: var(--цвет-линия); }
   #экран-04.светлый .оп-пункт b { color: var(--цвет-текст); }
+  #экран-04.светлый .оп-пункт summary { color: var(--цвет-акцент-тёмный); }
   #экран-04.светлый .оп-пункт p { color: var(--цвет-текст-мягкий); }
   #экран-04.тёмный .обучение h3 { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
   #экран-04.тёмный .обучение__вводная { color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 86%, transparent); }
   #экран-04.тёмный .оп-пункт { border-top-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
   #экран-04.тёмный .оп-обучение .оп-пункт:last-child { border-bottom-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
   #экран-04.тёмный .оп-пункт b { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
+  #экран-04.тёмный .оп-пункт summary { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
   #экран-04.тёмный .оп-пункт p { color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 86%, transparent); }
 
   @media (min-width: 900px) {
     #экран-04 .обо-мне { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 4rem; }
     #экран-04 .кадры { justify-self: end; max-width: none; }
     #экран-04 .кадр--главный img { aspect-ratio: 2 / 3; object-position: 50% 50%; }
-    #экран-04 .оп-обучение { grid-template-columns: 1fr 1fr; }
-    #экран-04 .оп-обучение .оп-пункт:nth-last-child(2) { border-bottom: 1px solid transparent; }
-    #экран-04.светлый .оп-обучение .оп-пункт:nth-last-child(2) { border-bottom-color: var(--цвет-линия); }
-    #экран-04.тёмный .оп-обучение .оп-пункт:nth-last-child(2) { border-bottom-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
   }
 
 /* экран 05 */
@@ -2093,3 +2110,17 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-08 .конт__сетка { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
     #экран-08 .конт__карточка { padding: 2.25rem; }
   }
+
+  #экран-08 + .липкая-кнопка .кнопка--главная { animation-duration: 7s; }
+  #экран-08 + .липкая-кнопка .кнопка--главная::after { animation-duration: 9s; }
+
+  #экран-08 .выбор-связи { border: 0; padding: 1.5rem; width: min(22rem, calc(100vw - 2rem)); border-radius: var(--радиус);
+      background: var(--цвет-фон); color: var(--цвет-текст); box-shadow: var(--тень-глубокая); }
+  #экран-08 .выбор-связи::backdrop { background: color-mix(in srgb, var(--цвет-текст) 42%, transparent); }
+  #экран-08 .выбор-связи__зов { margin: 0 2rem 1rem 0; font-weight: 700; font-size: var(--кегль-лид); }
+  #экран-08 .выбор-связи__вариант { display: flex; align-items: center; justify-content: center; min-height: 3.25rem; margin-top: .75rem;
+      border: 1px solid var(--цвет-акцент-тёмный); border-radius: var(--радиус); color: var(--цвет-акцент-тёмный);
+      background: var(--цвет-фон); font-weight: 700; font-size: var(--кегль-текст); text-decoration: none; }
+  #экран-08 .выбор-связи__вариант:hover, #экран-08 .выбор-связи__вариант:focus-visible { background: var(--цвет-акцент-тёмный); color: var(--цвет-на-акценте); }
+  #экран-08 .выбор-связи__закрыть { position: absolute; top: .75rem; right: .75rem; width: 2.25rem; height: 2.25rem; border: 0; border-radius: 50%;
+      background: transparent; color: var(--цвет-текст-мягкий); font-size: var(--кегль-h2); line-height: 1; cursor: pointer; }
