@@ -1880,31 +1880,28 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   #экран-04 .дипломы { margin-top: 3rem; }
   #экран-04 .дипломы h3 { margin: 0 0 1rem; font-size: var(--кегль-лид); font-weight: 700; }
-  #экран-04 .дипломы__ряд { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; align-items: start; }
-  #экран-04 .диплом { display: flex; flex-direction: column; gap: .5rem; min-width: 0; padding: .5rem .5rem .75rem; border: 1px solid transparent;
-      border-radius: var(--радиус); box-shadow: var(--тень); text-decoration: none; }
+  #экран-04 .дипломы__флажок { position: absolute; width: 1px; height: 1px; opacity: 0; margin: 0; pointer-events: none; }
+  #экран-04 .дипломы__ряд { display: flex; flex-wrap: nowrap; gap: .75rem; overflow-x: auto; overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: .25rem .25rem 1rem; margin: 0 -.25rem; }
+  #экран-04 .дипломы__ряд::-webkit-scrollbar { display: none; }
+  #экран-04 .диплом { display: block; flex: 0 0 66%; min-width: 0; scroll-snap-align: start; padding: .5rem; border: 1px solid transparent;
+      border-radius: var(--радиус); box-shadow: var(--тень); }
   #экран-04 .диплом .фото { margin: 0; box-shadow: none; border-radius: var(--радиус-малый); }
   #экран-04 .диплом img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
-  #экран-04 .диплом__подпись { display: block; padding: 0 .25rem; font-size: var(--кегль-мелкий); line-height: 1.4; overflow-wrap: anywhere; }
-  #экран-04 .дипломы__ещё { margin-top: .75rem; }
-  #экран-04 .дипломы__ещё summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 44rem;
-      padding: 1.1rem 0; cursor: pointer; list-style: none; font-weight: 700; font-size: var(--кегль-текст); border-top: 1px solid transparent; }
-  #экран-04 .дипломы__ещё summary::-webkit-details-marker { display: none; }
-  #экран-04 .дипломы__ещё summary::after { content: "+"; flex: none; width: 1.75rem; height: 1.75rem; display: grid; place-items: center;
+  #экран-04 .дипломы__ещё { display: none; align-items: center; justify-content: space-between; gap: 1rem; max-width: 44rem; margin-top: .75rem;
+      padding: 1.1rem 0; cursor: pointer; font-weight: 700; font-size: var(--кегль-текст); border-top: 1px solid transparent; }
+  #экран-04 .дипломы__ещё::after { content: "+"; flex: none; width: 1.75rem; height: 1.75rem; display: grid; place-items: center;
       border-radius: 50%; font-size: var(--кегль-лид); line-height: 1; font-weight: 400; border: 1px solid currentColor; }
-  #экран-04 .дипломы__ещё[open] > summary::after { content: "−"; }
-  #экран-04 .дипломы__ещё summary:focus-visible { outline: 2px solid var(--цвет-акцент-тёмный); outline-offset: 2px; border-radius: var(--радиус-малый); }
-  #экран-04 .дипломы__ещё .дипломы__ряд { margin-top: .25rem; }
+  #экран-04 .дипломы__флажок:checked ~ .дипломы__ещё::after { content: "−"; }
+  #экран-04 .дипломы__флажок:focus-visible ~ .дипломы__ещё { outline: 2px solid var(--цвет-акцент-тёмный); outline-offset: 2px; border-radius: var(--радиус-малый); }
   #экран-04.светлый .дипломы h3 { color: var(--цвет-текст); }
   #экран-04.светлый .диплом { background: var(--цвет-на-акценте); border-color: var(--цвет-линия); }
   #экран-04.светлый .диплом .фото { background: var(--цвет-фон); }
-  #экран-04.светлый .диплом__подпись { color: var(--цвет-текст-мягкий); }
-  #экран-04.светлый .дипломы__ещё summary { color: var(--цвет-акцент-тёмный); border-top-color: var(--цвет-линия); }
+  #экран-04.светлый .дипломы__ещё { color: var(--цвет-акцент-тёмный); border-top-color: var(--цвет-линия); }
   #экран-04.тёмный .дипломы h3 { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
   #экран-04.тёмный .диплом { background: var(--цвет-на-акценте); border-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
   #экран-04.тёмный .диплом .фото { background: var(--цвет-фон); }
-  #экран-04.тёмный .диплом__подпись { color: var(--цвет-текст-мягкий); }
-  #экран-04.тёмный .дипломы__ещё summary { color: var(--текст-ключа, var(--цвет-тёмный-текст)); border-top-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
+  #экран-04.тёмный .дипломы__ещё { color: var(--текст-ключа, var(--цвет-тёмный-текст)); border-top-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 22%, transparent); }
   #экран-04 .обучение { margin-top: 2.5rem; }
 
   #экран-04 .обучение h3 { margin: 0 0 .5rem; font-size: var(--кегль-лид); font-weight: 700; }
@@ -1943,7 +1940,11 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-04 .обо-мне { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 4rem; }
     #экран-04 .кадры { justify-self: end; max-width: none; }
     #экран-04 .кадр--главный img { aspect-ratio: 2 / 3; object-position: 50% 50%; }
-    #экран-04 .дипломы__ряд { grid-template-columns: repeat(auto-fill, minmax(12rem, 13rem)); gap: 1rem; }
+    #экран-04 .дипломы__ряд { display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 13rem)); gap: 1rem; overflow: visible;
+        scroll-snap-type: none; padding: 0; margin: 0; align-items: start; }
+    #экран-04 .диплом--ещё { display: none; }
+    #экран-04 .дипломы__флажок:checked ~ .дипломы__ряд .диплом--ещё { display: block; }
+    #экран-04 .дипломы__ещё { display: flex; }
   }
 
 /* экран 05 */
@@ -2119,34 +2120,21 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   }
 
 /* экран 08 */
-#экран-08 .конт__сетка { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
+#экран-08 .конт__шапка { text-align: center; margin: 0 auto 2rem; max-width: 36rem; }
   #экран-08 .конт__шапка h2 { margin: 0 0 .75rem; }
-  #экран-08 .конт__шапка .лид { margin: 0 0 1.75rem; }
-  #экран-08 .конт__строка { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-top: 1px solid transparent; }
-  #экран-08 .конт__строка:last-child { border-bottom: 1px solid transparent; }
-  #экран-08 .конт__строка svg, #экран-08 .конт__строка .иконка { width: 1.5rem; height: 1.5rem; flex: none; margin-top: .2rem; }
-  #экран-08 .конт__что { display: block; font-size: var(--кегль-мелкий, var(--кегль-текст)); line-height: 1.3; opacity: .75; }
-  #экран-08 .конт__значение { display: block; font-size: var(--кегль-лид); line-height: 1.35; font-weight: 600; }
-  #экран-08 .конт__значение a { text-decoration: underline; text-underline-offset: .2em; }
-
-  #экран-08 .конт__карточка { padding: 1.75rem; border: 1px solid transparent; border-radius: var(--радиус); }
+  #экран-08 .конт__шапка .лид { margin: 0 auto; max-width: none; }
+  #экран-08 .конт__карточка { max-width: 32rem; margin: 0 auto; padding: 1.75rem; text-align: center; border: 1px solid transparent; border-radius: var(--радиус); }
   #экран-08 .конт__карточка b { display: block; font-size: var(--кегль-лид); line-height: 1.3; margin: 0 0 .5rem; }
   #экран-08 .конт__карточка p { margin: 0 0 1.5rem; font-size: var(--кегль-текст); line-height: 1.5; }
+  #экран-08 .конт__карточка .кнопка { max-width: 100%; }
 
   #экран-08.светлый { background: var(--цвет-фон); }
   #экран-08.тёмный { background: var(--цвет-тёмный-фон); }
-  #экран-08.светлый .конт__строка { border-color: var(--цвет-линия); }
-  #экран-08.светлый .конт__строка svg, #экран-08.светлый .конт__строка .иконка { color: var(--цвет-акцент-тёмный); }
-  #экран-08.светлый .конт__значение a { color: var(--цвет-акцент-тёмный); }
   #экран-08.светлый .конт__карточка { background: var(--цвет-на-акценте, var(--цвет-фон)); border-color: var(--цвет-линия); box-shadow: var(--тень); }
-  #экран-08.тёмный .конт__строка { border-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 28%, transparent); }
-  #экран-08.тёмный .конт__строка svg, #экран-08.тёмный .конт__строка .иконка { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
-  #экран-08.тёмный .конт__значение a { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
   #экран-08.тёмный .конт__карточка { background: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 7%, transparent);
       border-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 28%, transparent); }
 
   @media (min-width: 800px) {
-    #экран-08 .конт__сетка { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
     #экран-08 .конт__карточка { padding: 2.25rem; }
   }
 
@@ -2163,10 +2151,6 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-08 .выбор-связи__вариант:hover, #экран-08 .выбор-связи__вариант:focus-visible { background: var(--цвет-акцент-тёмный); color: var(--цвет-на-акценте); }
   #экран-08 .выбор-связи__закрыть { position: absolute; top: .75rem; right: .75rem; width: 2.25rem; height: 2.25rem; border: 0; border-radius: 50%;
       background: transparent; color: var(--цвет-текст-мягкий); font-size: var(--кегль-h2); line-height: 1; cursor: pointer; }
-
-  @media (max-width: 899px) {
-    #экран-08 .конт__карточка { display: none; }
-  }
 
 /* экран 10 */
 #экран-10 .блок__внутри { padding-block: 3rem 2rem; }
