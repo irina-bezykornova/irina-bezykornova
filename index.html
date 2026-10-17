@@ -161,10 +161,25 @@
   /* Приглашение под кнопкой: только на компьютере; на телефоне кнопка и так на пределе окна, то же приглашение — в экране контактов. */
   .первый-экран__приглашение { display: none; }
   @media (min-width: 900px) { #экран-1 .первый-экран__приглашение { display: block; margin: .75rem 0 0; font-size: var(--кегль-текст); line-height: 1.4; color: var(--цвет-текст-мягкий); } }
+  /* Компьютер: меню разделов в верхней строке, как у многостраничного сайта; на телефоне его нет (там разделы листаются). Содержимое первого экрана встаёт в ту же колонку, что и остальные экраны: текст на одной линии с заголовком второго экрана, фото не уезжает к краю окна. */
+  .шапка__меню { display: none; }
+  @media (min-width: 1240px) {
+    #экран-1 .шапка { gap: 1.25rem; }
+    #экран-1 .шапка__меню { display: flex; flex: 1; justify-content: center; flex-wrap: nowrap; gap: .25rem 1.1rem; min-width: 0; }
+    #экран-1 .шапка__меню a { color: inherit; text-decoration: none; font-size: var(--кегль-мелкий); line-height: 1.2; white-space: nowrap; padding: .4rem 0; border-bottom: 1px solid transparent; }
+    #экран-1 .шапка__меню a:hover, #экран-1 .шапка__меню a:focus-visible { border-bottom-color: currentColor; }
+  }
+  @media (min-width: 1240px) and (max-width: 1499px) { #экран-1 .шапка__лиц { display: none; } }
+  @media (min-width: 900px) {
+    #экран-1.первый-экран--орбита .блок__внутри { width: min(100% - 2 * var(--отступ-блока), var(--ширина)); margin-inline: auto; padding-inline: 0; }
+  }
 </style>
 
   <header class="шапка">
     <a class="шапка__лого" href="#">Ирина Безыкорнова · психолог</a>
+    <nav class="шапка__меню" aria-label="Разделы сайта">
+      <a href="#экран-02">Темы</a><a href="#экран-03">Чем помогу</a><a href="#экран-04">Обо мне</a><a href="#экран-05">Отзывы</a><a href="#экран-11">Как проходит</a><a href="#экран-06">Вопросы</a><a href="#экран-07">Цена</a><a href="#экран-09">Встречи</a><a href="#экран-08">Контакты</a>
+    </nav>
     <span class="шапка__лиц"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
 </svg><span><span class="полн">Онлайн и очно</span></span></span>
