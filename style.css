@@ -2002,7 +2002,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-11 .шаги { grid-area: шаги; list-style: none; margin: 0; padding: 0; counter-reset: шаг; display: block; gap: 0; }
   #экран-11 .шаг { counter-increment: шаг; position: relative; display: block; margin: 0; padding: 1.5rem 0 1.5rem 4.2rem; border-top: 1px solid transparent; min-height: 0; }
   #экран-11 .шаг:last-child { border-bottom: 1px solid transparent; }
-  #экран-11 .шаг::before { content: counter(шаг); position: absolute; left: 0; top: 1.15rem; bottom: auto; width: auto; height: auto; background: none; border: 0; box-shadow: none; font-size: 2.6rem; line-height: 1; font-weight: 300; letter-spacing: -.02em; }
+  #экран-11 .шаг::before { content: counter(шаг); position: absolute; left: 0; top: 1.15rem; bottom: auto; width: auto; height: auto; background: none; border: 0; box-shadow: none; font-size: var(--кегль-h2); line-height: 1; font-weight: 300; letter-spacing: -.02em; }
   #экран-11 .шаг p { margin: 0; font-size: var(--кегль-лид); line-height: 1.45; }
 
   #экран-11 .процесс { grid-area: процесс; padding: 0 0 0 1.25rem; border-left: 2px solid transparent; max-width: 34rem; }
@@ -2011,7 +2011,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-11 .процесс p:last-child { margin-bottom: 0; }
 
   #экран-11 .нюансы { grid-area: нюансы; padding-top: 2rem; border-top: 1px solid transparent; }
-  #экран-11 .нюансы h3 { margin: 0 0 1.5rem; font-size: .8rem; line-height: 1.2; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  #экран-11 .нюансы h3 { margin: 0 0 1.5rem; font-size: var(--кегль-кикер); line-height: 1.2; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
   #экран-11 .нюансы ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
   #экран-11 .нюансы li { margin: 0; padding: 0; font-size: var(--кегль-текст); line-height: 1.6; }
   #экран-11 .нюансы li strong { display: block; margin-bottom: .35rem; font-size: var(--кегль-лид); line-height: 1.35; font-weight: 600; }
